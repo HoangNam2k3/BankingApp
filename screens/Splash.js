@@ -6,7 +6,7 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import EnterPin from './EnterPin';
 import { useNavigation, useScrollToTop } from '@react-navigation/native';
 
-const Splash = ({}) => {
+const Splash = () => {
     const navigation = useNavigation();
     const [isSubmitted, setIsSubmitted] = useState(false);
 

@@ -12,7 +12,7 @@ const ButtonCus = ({ tit, col = '#fff', bg = '#3B3DBF', onPress }) => {
             }}
             onPress={onPress}
         >
-            <Text style={{ color: col, fontSize: 18 }}>{tit}</Text>
+            <Text style={{ color: col, fontSize: 18, fontWeight: 700}}>{tit}</Text>
         </TouchableOpacity>
     );
 };
