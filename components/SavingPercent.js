@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { View, Text } from 'react-native';
 
-const SavingPercent = ({ children, maxVal = 0, minVal = 0 }) => {
+const SavingPercent = ({ children, maxVal = 1, minVal = 0 }) => {
     useEffect(() => {}, [maxVal]);
     return (
         <View>

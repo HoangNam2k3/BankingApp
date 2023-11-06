@@ -1,8 +1,9 @@
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
 import ButtonCus from '../components/ButtonCus';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import { useNavigation } from '@react-navigation/native';
 
 const RequestSuccess = () => {
+    const navigation = useNavigation();
     return (
         <View style={{ backgroundColor: '#fff', flex: 1, justifyContent: 'center', alignItems: 'center' }}>
             <Image source={require('../assets/illustration.png')} />
@@ -14,7 +15,7 @@ const RequestSuccess = () => {
                 <Text style={{ fontSize: 34, fontWeight: 700, color: '#3B3DBF' }}>$ 2500.00</Text>
             </View>
             <View style={{ width: '100%', alignItems: 'center', marginTop: 32 }}>
-                <ButtonCus tit={'Next'} />
+                <ButtonCus onPress={() => navigation.navigate('Request Money')} tit={'Next'} />
                 <TouchableOpacity>
                     <Text style={{ marginTop: 32, fontSize: 18, fontWeight: 600, color: '#3B3DBF' }}>Learn More</Text>
                 </TouchableOpacity>

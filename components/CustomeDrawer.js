@@ -1,33 +1,30 @@
-import { DrawerContentScrollView, DrawerItemList} from "@react-navigation/drawer";
-import { StatusBar } from "expo-status-bar";
-import React from "react";
-import {Text, View, Image, TouchableOpacity, StyleSheet, ImageBackground} from 'react-native'
+import { DrawerContentScrollView, DrawerItemList } from '@react-navigation/drawer';
+import { useNavigation } from '@react-navigation/native';
+import React from 'react';
+import { Text, View, Image, TouchableOpacity, StyleSheet, ImageBackground } from 'react-native';
 
-const CustomeDrawer = ({props}) => {
-    return(
-        <DrawerContentScrollView
-            {...props}
-            contentContainerStyle={{backgroundColor: '#393AB4'}}>
-            
-            <View style={styles.imgBack}>
-                <Image source={require('../assets/img/ImagePlaceholder.png')}
-                    style={{width: 80, height: 80, borderRadius: 10, marginBottom: 10,}}
+const CustomeDrawer = ({ props }) => {
+    const navigation = useNavigation();
+    return (
+        <DrawerContentScrollView {...props} contentContainerStyle={{ backgroundColor: '#393AB4' }}>
+            <TouchableOpacity onPress={() => navigation.navigate('Profile')} style={styles.imgBack}>
+                <Image
+                    source={require('../assets/img/ImagePlaceholder.png')}
+                    style={{ width: 80, height: 80, borderRadius: 10, marginBottom: 10 }}
                 />
                 <Text style={styles.userName}> Cameron Williamson </Text>
-            </View>
-            
+            </TouchableOpacity>
+
             <View style={styles.containerDrawerList}>
-                 <DrawerItemList {...props}/>
+                <DrawerItemList {...props} />
             </View>
-            
         </DrawerContentScrollView>
     );
 };
 
-const styles =StyleSheet.create({
+const styles = StyleSheet.create({
     container: {
         flex: 1,
-
     },
     imgBack: {
         padding: 20,
@@ -43,10 +40,10 @@ const styles =StyleSheet.create({
         marginLeft: 16,
     },
     containerDrawerList: {
-        flex: 1, 
+        flex: 1,
         backgroundColor: '#fff',
         paddingTop: 10,
-    }
+    },
 });
 
 export default CustomeDrawer;

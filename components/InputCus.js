@@ -1,6 +1,6 @@
 import { View, Text, TextInput } from 'react-native';
 
-const InputCus = ({ tit, desc, placeholder, typeNumber, isMoney = false, styles = [], onChange }) => {
+const InputCus = ({ val, tit, desc, placeholder, typeNumber, isMoney = false, styles = [], onChange }) => {
     return (
         <View style={{ gap: 8 }}>
             <View style={{ flexDirection: 'row', gap: 8, alignItems: 'center' }}>
@@ -23,8 +23,10 @@ const InputCus = ({ tit, desc, placeholder, typeNumber, isMoney = false, styles 
                     style={[{ flex: 1, marginLeft: 4, fontSize: 18 }, [...styles]]}
                     placeholder={placeholder}
                     keyboardType={typeNumber ? 'numeric' : 'default'}
-                    onChange={onChange ? onChange : undefined}
-                />
+                    onChangeText={onChange ? (text) => onChange(text) : undefined}
+                >
+                    {val && val}
+                </TextInput>
             </View>
         </View>
     );

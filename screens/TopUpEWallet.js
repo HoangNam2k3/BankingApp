@@ -4,9 +4,11 @@ import ButtonCus from '../components/ButtonCus';
 import InputCus from '../components/InputCus';
 import Item from '../components/Item';
 import { EWalletCenter_DATA } from '../data';
+import { useNavigation } from '@react-navigation/native';
 
 const Data = EWalletCenter_DATA[0];
 const TopUpEWallet = () => {
+    const navigation = useNavigation();
     return (
         <View style={{ flex: 1, backgroundColor: '#fff' }}>
             <NavTop tit={'Top up E-Wallet'} />
@@ -28,7 +30,7 @@ const TopUpEWallet = () => {
                     </View>
                 </View>
                 <View style={{ alignItems: 'center' }}>
-                    <ButtonCus tit={'Top Up'} />
+                    <ButtonCus onPress={() => navigation.navigate('EWallet')} tit={'Top Up'} />
                 </View>
             </View>
         </View>

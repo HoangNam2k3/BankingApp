@@ -2,6 +2,7 @@ import { View, Text, ScrollView } from 'react-native';
 import NavTop from '../components/NavTop';
 import Saving from '../components/Saving';
 import ButtonCus from '../components/ButtonCus';
+import { useNavigation } from '@react-navigation/native';
 
 const SAVING_DATA = [
     {
@@ -25,6 +26,7 @@ const SAVING_DATA = [
 ];
 
 const MySaving = () => {
+    const navigation = useNavigation();
     return (
         <View style={{ backgroundColor: '#fff', flex: 1 }}>
             <NavTop tit={'My Saving'} />
@@ -44,7 +46,7 @@ const MySaving = () => {
                     </View>
                 </ScrollView>
                 <View style={{ alignItems: 'center' }}>
-                    <ButtonCus tit={'Add new Saving'} />
+                    <ButtonCus onPress={() => navigation.navigate('AddNewSaving')} tit={'Add new Saving'} />
                 </View>
             </View>
         </View>
