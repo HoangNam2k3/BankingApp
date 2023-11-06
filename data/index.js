@@ -4,19 +4,19 @@ export const HistoryTransaction_DATA = [
         img: require('../assets/RobertFox.png'),
         title: 'Robert Fox',
         time: '23 January 2021',
-        price: '- $396.84',
+        change: '- $396.84',
     },
     {
         img: require('../assets/SavannahNguyen.png'),
         title: 'Savannah Nguyen',
         time: '17 January 2021',
-        price: '+ $589.99',
+        change: '+ $589.99',
     },
     {
         img: require('../assets/DarrellSteward.png'),
         title: 'Darrell Steward',
         time: '12 January 2021',
-        price: '- $293.01',
+        change: '- $293.01',
     },
 ];
 //January
@@ -25,25 +25,25 @@ export const HistoryTransactionJanuary_DATA = [
         img: require('../assets/CameronWilliamson.png'),
         title: 'Cameron Williamson',
         time: '23 December 2020',
-        price: '+ $96.84',
+        change: '+ $96.84',
     },
     {
         img: require('../assets/EstherHoward.png'),
         title: 'Esther Howard',
         time: '12 December 2020',
-        price: '- $396.84',
+        change: '- $396.84',
     },
     {
         img: require('../assets/CameronWilliamson1.png'),
         title: 'Cameron Williamson',
         time: '23 December 2020',
-        price: '+ $96.84',
+        change: '+ $96.84',
     },
     {
         img: require('../assets/EstherHoward1.png'),
         title: 'Esther Howard',
         time: '12 December 2020',
-        price: '- $396.84',
+        change: '- $396.84',
     },
 ];
 //December
@@ -52,13 +52,13 @@ export const HistoryTransactionDecember_DATA = [
         img: require('../assets/CameronWilliamson2.png'),
         title: 'Cameron Williamson',
         time: '23 December 2020',
-        price: '+ $96.84',
+        change: '+ $96.84',
     },
     {
         img: require('../assets/EstherHoward2.png'),
         title: 'Esther Howard',
         time: '12 December 2020',
-        price: '- $396.84',
+        change: '- $396.84',
     },
 ];
 //this week
