@@ -17,8 +17,10 @@ const SendMoney2 = () => {
   
   return (
     <View style={{flex:1}}> 
-      <NavTop tit='Request Money' />
-      <View style={{flex:1, marginVertical:24}}>
+      <View style={{backgroundColor:'#fff'}}>
+        <NavTop tit={'Send Money'} img={require('../assets/More.png')}/>
+      </View>
+      <View style={{flex:1, backgroundColor:'#F4F4F5'}}>
         <View style={{marginHorizontal:15, flex:1}}>
             <Noti DAta={Theresa1}/>
             <View style={{marginTop:30}}>

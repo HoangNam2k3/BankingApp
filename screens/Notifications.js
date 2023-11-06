@@ -42,15 +42,15 @@ const DATA_ThisMonth=[
 const Notifications = () => {
   return (
     <View>
-        <NavTop tit={'Notification'}/>
+        <View style={{backgroundColor:'#fff'}}>
+            <NavTop tit={'Notification'}/>
+        </View>
         
         <View style={{marginHorizontal: 15}}>
 
-        <Text style={styles.ten}>This Week</Text>
-        <Noti DAta={DATA_ThisWeek} />
+            <Noti DAta={DATA_ThisWeek} name={'This Week'}/>
 
-        <Text style={styles.ten}>This Month</Text>
-        <Noti DAta={DATA_ThisMonth} />
+            <Noti DAta={DATA_ThisMonth} name={'This Month'}/>
 
         </View>
     </View>
@@ -59,10 +59,5 @@ const Notifications = () => {
 
 export default Notifications
 const styles = StyleSheet.create({
-    ten:{
-        fontSize:14, 
-        color:'#C5C5C7',
-        marginTop:30
 
-    }
 })

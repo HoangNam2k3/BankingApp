@@ -112,7 +112,7 @@ const App = () => {
        
 
             <View style={styles.functionally}>
-                <RenderData1 item={data1[0]}/>
+                <RenderData1 item={data1[0]} />
                 <RenderData1 item={data1[1]}/>
                 <RenderData1 item={data1[2]}/>
                 <RenderData1 item={data1[3]} onpress={() => {toggleStateMyQr()}}/>

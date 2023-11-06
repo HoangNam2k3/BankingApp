@@ -10,7 +10,7 @@ const NavTop = ({ tit, img }) => {
                 alignItems: 'center',
                 justifyContent: 'space-between',
                 marginHorizontal: 16,
-                // paddingVertical: 16,
+                paddingVertical: 16,
                 marginTop: 44,
                 backgroundColor: '#fff',
             }}
@@ -23,7 +23,7 @@ const NavTop = ({ tit, img }) => {
                     {tit}
                 </Text>
             )}
-            {img && <Image source={img} />}
+            {img && <TouchableOpacity><Image source={img} /></TouchableOpacity>}
         </View>
     );
 };

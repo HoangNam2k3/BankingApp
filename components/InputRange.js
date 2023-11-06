@@ -1,6 +1,7 @@
+import Slider from '@react-native-community/slider';
 import { useEffect, useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import Slider from 'react-native-slider';
+// import Slider from 'react-native-slider';
 
 const InputRange = ({ maxVal = 100 }) => {
     const [sliderValue, setSliderValue] = useState(0);

@@ -20,7 +20,7 @@ const WithdrawMoney = () => {
                     </View>
                     <View>
                         <Text style={{ fontSize: 18, marginBottom: 8 }}>Amount to Withdraw</Text>
-                        <InputCus isMoney />
+                        <InputCus isMoney typeNumber={'numeric'}/>
                     </View>
                     <SavingPercent>
                         <InputRange />

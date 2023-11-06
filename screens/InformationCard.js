@@ -9,8 +9,9 @@ import ButtonCus from '../components/ButtonCus'
 const InformationCard = () => {
   return (
     <View style={{flex:1}}>
-      <NavTop tit={'Card Information'} img={require('../assets/More.png')}/>
-      
+      <View style={{backgroundColor:'#fff'}}>
+        <NavTop tit={'Card Information'} img={require('../assets/More.png')}/>
+      </View>
 
       <View style={{ flex:1, marginVertical: 24}}>
         <View style={{marginHorizontal:15, flex:1}}>

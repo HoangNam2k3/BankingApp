@@ -3,7 +3,6 @@ import React from 'react'
 
 
 const Visa = ({name='Your Name', stk ='XXXX   XXXX   XXXX   XXXX', date='XX / XX', balance='$0'}) => {
-// const Visa = ({item}) => {
 
   return (
     <View style={styles.part}>
@@ -38,7 +37,7 @@ const styles = StyleSheet.create({
       backgroundColor: '#393AB4',
       borderRadius: 10,
       height: 171,
-      marginHorizontal: 5
+      // marginHorizontal: 5
     },
     part1:{
       marginHorizontal:5,
@@ -56,12 +55,12 @@ const styles = StyleSheet.create({
     },
     textview11:{
       color:'#FFFFFF',
-      fontSize: 12
+      fontSize: 12,
     },
     textview12:{
       color:'#FFFFFF',
       fontSize:16,
-       fontWeight: '700'
+      fontWeight: '700'
     },
     textview13:{
       color:'#FFFFFF',

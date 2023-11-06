@@ -17,7 +17,9 @@ const RequestMoney2 = () => {
   
   return (
     <View style={{flex:1}}> 
-      <NavTop tit='Request Money' />
+      <View style={{backgroundColor:'#fff'}}>
+        <NavTop tit='Request Money' />
+      </View>
       <View style={{flex:1, marginVertical:24}}>
         <View style={{marginHorizontal:15, flex:1}}>
             <Noti DAta={Theresa1}/>

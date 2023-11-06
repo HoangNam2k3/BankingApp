@@ -7,7 +7,9 @@ const Profile = () => {
     const toggleSwtich = () =>setIsEnabled(previousState => !previousState);
   return (
     <View>
-        <NavTop tit={'Profile'} img={require('../assets/ActionSettings.png')}/>
+        <View style={{backgroundColor:'#fff'}}>
+            <NavTop tit={'Profile'} img={require('../assets/ActionSettings.png')}/>
+        </View>
         <ScrollView>
             <View style={styles.container}>
                 <Image source={require('../assets/ImagePlaceholder.png')}/>
@@ -18,10 +20,10 @@ const Profile = () => {
                     marginRight:100
                     }}>
                     <Text style={{fontSize:16, fontWeight:700}}>Cameron Williamson</Text>
-                    <Text style={{fontSize:12, color:'#C5C5C7'}}>$joneswilliam</Text>
+                    <Text style={{fontSize:14, color:'#C5C5C7',paddingTop:10}}>$joneswilliam</Text>
                 </View>
             </View>
-            <Text style={{marginTop: 20, marginLeft: 16, color:'#8A8A8E', fontSize: 17}}>Personal Information</Text>
+            <Text style={styles.tit}>Personal Information</Text>
 
 
             <View style={styles.profile}>
@@ -49,7 +51,7 @@ const Profile = () => {
                 <Text style={{color:'#8A8A8E', fontSize:16}}>Gotham Road 21...</Text>
             </View>
 
-            <Text style={{marginTop: 30, marginLeft: 16, color:'#8A8A8E', fontSize: 17}}>Security</Text>
+            <Text style={styles.tit}>Security</Text>
             <View style={styles.profile}>
                 <Text style={{fontSize:16}}>Change Pin</Text>
                 <Image source={require('../assets/UIChevronRigth.png')}/> 
@@ -66,13 +68,13 @@ const Profile = () => {
                     ios_backgroundColor= "#3e3e3e"
                     onValueChange={toggleSwtich}
                     value={isEnabled}
-                    style={{transform:[{scaleX:1.6},{scaleY:1.6}]}}
+                    style={{height:20,transform:[{scaleX:1.3},{scaleY:1.3}]}}
                 />
                     
 
             </View>
 
-            <Text style={{marginTop: 30, marginLeft: 16, color:'#8A8A8E', fontSize: 17}}>Other</Text>
+            <Text style={styles.tit}>Other</Text>
             <View style={styles.profile}>
                 <Text style={{fontSize:16}}>Language</Text>
                 <Image source={require('../assets/UIChevronRigth.png')}/> 
@@ -92,9 +94,10 @@ const Profile = () => {
 export default Profile
 const styles = StyleSheet.create({
     container:{
-        paddingHorizontal:16,
+        paddingHorizontal:15,
         flexDirection:'row',
-        alignItems:'flex-end',
+        alignItems:'center',
+        marginTop:10
     },
     profile:{
         justifyContent:'space-between',
@@ -103,5 +106,11 @@ const styles = StyleSheet.create({
         padding:12,
         borderBottomColor:'#cccc',
         alignItems:'center'
+    },
+    tit:{
+        marginTop: 15, 
+        marginLeft: 15, 
+        color:'#8A8A8E', 
+        fontSize: 17
     }
 })

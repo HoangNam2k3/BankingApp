@@ -1,6 +1,5 @@
 import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native'
 import React from 'react'
-import Swiper from 'react-native-swiper';
 import NavTop from '../components/NavTop'
 import Visa from '../components/Visa'
 import AppIntroSlider from 'react-native-app-intro-slider';
@@ -16,39 +15,33 @@ const MyCard = () => {
   const transaction =[
     {
       img: require('../assets/Shopping.png'),
-      // img: require('../assets/SavannahNguyen2.png'),
-
       title: 'Shopping',
       time: '12 Transactions',
       price: '$100',
     },
     {
       img: require('../assets/Transportation.png'),
-      // img: require('../assets/SavannahNguyen2.png'),
-      
       title: 'Transportation',
       time: '24 Transactions',
       price: '$50',
     },
     {
       img: require('../assets/Food.png'),
-      // img: require('../assets/SavannahNguyen2.png'),
-
-
       title: 'Food',
       time: '8 Transactions',
       price: '$100',
     },
   ];
   
-  
   return (
     <View style={{flex:1}}>
-      <NavTop img={require('../assets/More.png')} tit={'My Card'}/>
+      <View style={{backgroundColor:'#fff'}}>
+        <NavTop img={require('../assets/More.png')} tit={'My Card'}/>
+      </View>
 
       <View style={styles.container}>
         <AppIntroSlider
-          renderItem={({ item }) => <Visa name={item.name} stk={item.stk} date={item.data} balance={item.balance}/>}
+          renderItem={({ item }) => <Visa name={item.name} stk={item.stk} date={item.date} balance={item.balance}/>}
           data={visas}
           showNextButton={false}
           showDoneButton={false}
@@ -77,12 +70,8 @@ const MyCard = () => {
 
         <View style={styles.part2}>
           <View style={styles.spacepart}> 
-            <View style={styles.group}>
-              <Text style={{fontSize:16, fontWeight:'700'}}>Transaction</Text>
-            </View>
-            <View>
-              <Noti DAta={transaction} colorer={{backgroundColor:'#393AB4', height: 40, width: 40, borderRadius:8, alignItems: 'center', justifyContent: 'center'}}/>
-            </View>
+            <Text style={{fontSize:16, fontWeight:'700'}}>Transaction</Text>
+            <Noti DAta={transaction} colorer={{backgroundColor:'#393AB4', height: 40, width: 40, borderRadius:8, alignItems: 'center', justifyContent: 'center'}}/>
           </View>
         </View>
 
@@ -152,7 +141,7 @@ const styles = StyleSheet.create({
   },
   spacepart:{
     marginHorizontal:15,
-    marginVertical:15,
+    marginVertical:10,
     flex:1,
     
   }
