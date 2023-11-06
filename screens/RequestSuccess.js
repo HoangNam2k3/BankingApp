@@ -1,6 +1,5 @@
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
 import ButtonCus from '../components/ButtonCus';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const RequestSuccess = () => {
     return (

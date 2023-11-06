@@ -1,12 +1,16 @@
 import { View, Text } from 'react-native';
 import NavTop from '../components/NavTop';
-import InputMoney from '../components/InputCus';
 import ButtonCus from '../components/ButtonCus';
-import SavingPercent from '../components/SavingPercent';
 import InputRange from '../components/InputRange';
 import InputCus from '../components/InputCus';
+import { useState } from 'react';
+import { useNavigation } from '@react-navigation/native';
 
 const WithdrawMoney = () => {
+    const navigation = useNavigation();
+
+    const [initBalance, setInitBalance] = useState(0);
+
     return (
         <View style={{ flex: 1, backgroundColor: '#fff' }}>
             <NavTop tit={'Withdraw Money'} />
@@ -19,15 +23,25 @@ const WithdrawMoney = () => {
                         </Text>
                     </View>
                     <View>
-                        <Text style={{ fontSize: 18, marginBottom: 8 }}>Amount to Withdraw</Text>
-                        <InputCus isMoney typeNumber={'numeric'}/>
+                        <InputCus tit={'Amount to Withdraw'} isMoney />
                     </View>
-                    <SavingPercent>
-                        <InputRange />
-                    </SavingPercent>
+                    <View>
+                        <View
+                            style={{
+                                flexDirection: 'row',
+                                marginTop: 12,
+                                marginBottom: 8,
+                                justifyContent: 'space-between',
+                            }}
+                        >
+                            <Text style={{ color: '#8A8A8E' }}>${initBalance}</Text>
+                            <Text style={{ color: '#8A8A8E' }}>${2000}</Text>
+                        </View>
+                        <InputRange target={2000} init={initBalance} onSliderValueChange={setInitBalance} />
+                    </View>
                 </View>
                 <View style={{ alignItems: 'center' }}>
-                    <ButtonCus tit={'Withdraw'} />
+                    <ButtonCus onPress={() => navigation.navigate('Saving')} tit={'Withdraw'} />
                 </View>
             </View>
         </View>

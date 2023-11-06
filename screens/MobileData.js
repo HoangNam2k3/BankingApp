@@ -1,6 +1,5 @@
-import { View, Text, TextInput } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import NavTop from '../components/NavTop';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 import InputCus from '../components/InputCus';
 
 const MONEY = [5, 10, 25, 50, 75, 100, 500, 1000];
@@ -19,8 +18,7 @@ const MobileData = () => {
                     </TouchableOpacity>
                 </View>
                 <View style={{ marginTop: 32 }}>
-                    <Text style={{ fontWeight: 500, fontSize: 18, marginBottom: 14 }}>Mobile Number</Text>
-                    <InputCus typeNumber placeholder={'Enter phone number'} />
+                    <InputCus tit={'Mobile Number'} typeNumber placeholder={'Enter phone number'} />
                 </View>
                 <View
                     style={{

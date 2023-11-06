@@ -1,6 +1,7 @@
 import { View, Text, TextInput, Image } from 'react-native';
 import NavTop from '../components/NavTop';
 import Bill from '../components/Bill';
+import { useNavigation } from '@react-navigation/native';
 
 const BILL_DATA = [
     {
@@ -54,6 +55,7 @@ const BILL_DATA = [
 ];
 
 const BillPayments = () => {
+    const navigation = useNavigation();
     return (
         <View style={{ backgroundColor: '#fff', flex: 1 }}>
             <NavTop tit={'Manage Your Payments'} />
@@ -100,7 +102,7 @@ const BillPayments = () => {
                                 elevation: 4,
                             }}
                         >
-                            <Bill src={item.src} tit={item.tit} />
+                            <Bill onPress={() => navigation.navigate('MobileData')} src={item.src} tit={item.tit} />
                         </View>
                     ))}
                 </View>

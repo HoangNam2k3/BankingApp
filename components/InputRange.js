@@ -1,19 +1,21 @@
-import Slider from '@react-native-community/slider';
-import { useEffect, useState } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-// import Slider from 'react-native-slider';
+import { useState } from 'react';
+import { View } from 'react-native';
+import Slider from 'react-native-slider';
 
-const InputRange = ({ maxVal = 100 }) => {
-    const [sliderValue, setSliderValue] = useState(0);
-    useEffect(() => {}, [maxVal]);
+const InputRange = ({ target, init, onSliderValueChange }) => {
+    const [sliderValue, setSliderValue] = useState(init);
+    const onValueChange = (value) => {
+        setSliderValue(value);
+        onSliderValueChange(value);
+    };
     return (
         <View style={{ borderRadius: 999, overflow: 'hidden' }}>
             <Slider
                 value={sliderValue}
-                onValueChange={(value) => setSliderValue(value)}
+                onValueChange={onValueChange}
                 minimumValue={0}
-                maximumValue={maxVal}
-                step={1}
+                maximumValue={target}
+                step={target / 100}
                 minimumTrackTintColor="#3B3DBF"
                 maximumTrackTintColor="gray"
                 thumbTintColor="#3B3DBF"

@@ -3,8 +3,10 @@ import NavTop from '../components/NavTop';
 import ButtonCus from '../components/ButtonCus';
 import { EWalletCenter_DATA } from '../data';
 import Item from '../components/Item';
+import { useNavigation } from '@react-navigation/native';
 
 const EWallet = () => {
+    const navigation = useNavigation();
     return (
         <View style={{ flex: 1, backgroundColor: '#fff' }}>
             <NavTop tit={'E-Wallet Center'} />
@@ -26,7 +28,7 @@ const EWallet = () => {
                     </View>
                 </ScrollView>
                 <View style={{ alignItems: 'center' }}>
-                    <ButtonCus tit={'Add E-wallet'} />
+                    <ButtonCus onPress={() => navigation.navigate('TopUpEWallet')} tit={'Add E-wallet'} />
                 </View>
             </View>
         </View>

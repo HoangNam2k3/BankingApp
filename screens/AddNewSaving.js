@@ -1,15 +1,18 @@
 import { View, Text, Image } from 'react-native';
 import NavTop from '../components/NavTop';
 import ButtonCus from '../components/ButtonCus';
-import SavingPercent from '../components/SavingPercent';
 import InputRange from '../components/InputRange';
 import InputCus from '../components/InputCus';
 import { useEffect, useState } from 'react';
+import { useNavigation } from '@react-navigation/native';
 
 const AddNewSaving = () => {
-    const [targetSaving, setTarget] = useState(0);
+    const navigation = useNavigation();
 
-    useEffect(() => {}, [targetSaving]);
+    const [targetSaving, setTarget] = useState(0);
+    const [initBalance, setInitBalance] = useState(0);
+
+    useEffect(() => {}, [targetSaving, initBalance]);
     return (
         <View style={{ backgroundColor: '#fff', flex: 1 }}>
             <NavTop tit={'Add new Saving'} />
@@ -17,26 +20,40 @@ const AddNewSaving = () => {
                 <View style={{ paddingHorizontal: 16 }}>
                     <Image style={{ width: 110, height: 110 }} source={require('../assets/ImagePlaceholder.png')} />
                     <View style={{ gap: 18, marginTop: 24 }}>
-                        <View>
-                            <Text style={{ fontSize: 18, marginBottom: 8 }}>Write Your Dream Here</Text>
-                            <InputCus placeholder={'Enter your Dream'} />
-                        </View>
-                        <View>
-                            <Text style={{ fontSize: 18, marginBottom: 8 }}>Write Your Dream Here</Text>
-                            <InputCus typeNumber isMoney />
-                        </View>
-                        <View>
-                            <Text style={{ fontSize: 18, marginBottom: 8 }}>Write Your Dream Here</Text>
-                            <InputCus typeNumber isMoney onChange={(text) => setTarget(text)} />
-                        </View>
+                        <InputCus tit={'Write Your Dream Here'} placeholder={'Enter your Dream'} />
 
-                        <SavingPercent maxVal={targetSaving} minVal={0}>
-                            <InputRange />
-                        </SavingPercent>
+                        <InputCus tit={'Target Savings'} typeNumber isMoney onChange={(val) => setTarget(val)} />
+
+                        <InputCus
+                            tit={'Initial Balance'}
+                            val={initBalance && initBalance}
+                            typeNumber
+                            isMoney
+                            onChange={(val) => setInitBalance(val)}
+                        />
+
+                        <View>
+                            <View
+                                style={{
+                                    flexDirection: 'row',
+                                    marginTop: 12,
+                                    marginBottom: 8,
+                                    justifyContent: 'space-between',
+                                }}
+                            >
+                                <Text style={{ color: '#8A8A8E' }}>${initBalance}</Text>
+                                <Text style={{ color: '#8A8A8E' }}>${targetSaving}</Text>
+                            </View>
+                            <InputRange
+                                target={parseInt(targetSaving)}
+                                init={parseInt(initBalance)}
+                                onSliderValueChange={setInitBalance}
+                            />
+                        </View>
                     </View>
                 </View>
                 <View style={{ alignItems: 'center' }}>
-                    <ButtonCus tit={'Add Saving'} />
+                    <ButtonCus onPress={() => navigation.navigate('WithdrawMoney')} tit={'Add Saving'} />
                 </View>
             </View>
         </View>
